@@ -1,0 +1,34 @@
+[
+    {
+       "code": "01",
+       "label": "Jaén"
+    },
+    {
+       "code": "02",
+       "label": "Cordoba"
+    },
+    {
+       "code": "03",
+       "label": "Sevilla"
+    },
+    {
+       "code": "04",
+       "label": "Huelva"
+    },
+    {
+       "code": "05",
+       "label": "Cadiz"
+    },
+    {
+       "code": "06",
+       "label": "Málaga"
+    },
+    {
+       "code": "07",
+       "label": "Granada"
+    },
+    {
+       "code": "08",
+       "label": "Almería"
+    }
+]

@@ -1,12 +1,14 @@
-const { defineConfig } = require("cypress");
+const { defineConfig } = require('cypress');
 const webpackPreprocessor = require('@cypress/webpack-preprocessor');
-const { addCucumberPreprocessorPlugin } = require('@badeball/cypress-cucumber-preprocessor');
+const {
+  addCucumberPreprocessorPlugin,
+} = require('@badeball/cypress-cucumber-preprocessor');
 const getCompareSnapshotsPlugin = require('cypress-image-diff-js/plugin');
 
 module.exports = defineConfig({
   e2e: {
-    specPattern: "cypress/features/**/*.feature",
-    baseUrl: 'https://es.wikipedia.org/',
+    specPattern: 'cypress/features/**/*.feature',
+    baseUrl: 'https://www.saucedemo.com/',
     async setupNodeEvents(on, config) {
       await addCucumberPreprocessorPlugin(on, config);
       const options = {
@@ -25,26 +27,26 @@ module.exports = defineConfig({
             ],
           },
         },
-      }
+      };
       on('file:preprocessor', webpackPreprocessor(options));
-      on("after:run", async () => {
-        console.log("override after:run");
+      on('after:run', async () => {
+        console.log('override after:run');
       });
       return getCompareSnapshotsPlugin(on, config);
-    }
+    },
   },
   env: {
     user: {
-      username: "VALID_ENVIRONMENT_USER",
-      password: "VALID_ENVIRONMENT_PASS",
-    },  
+      username: 'VALID_ENVIRONMENT_USER',
+      password: 'VALID_ENVIRONMENT_PASS',
+    },
   },
   video: true,
-  videosFolder: "results/videos",
-  screenshotsFolder: "results/screenshots",
-  reporter: "mochawesome",
+  videosFolder: 'results/videos',
+  screenshotsFolder: 'results/screenshots',
+  reporter: 'mochawesome',
   reporterOptions: {
-    configFile: "cypress/reporter-config.json"
+    configFile: 'cypress/reporter-config.json',
   },
   defaultCommandTimeout: 10000,
   execTimeout: 10000,

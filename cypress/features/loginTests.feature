@@ -5,7 +5,13 @@ Scenario: Inicio de sesión exitoso
   When ingreso el usuario "standard_user" y la contraseña "secret_sauce"
   Then debería ver la página de productos
 
-Scenario: Error de inicio de sesión con credenciales incorrectas
+Scenario Outline: Error de inicio de sesión con credenciales incorrectas
   Given que estoy en la página de login
-  When ingreso el usuario "incorrecto" y la contraseña "incorrecta"
+  When ingreso el usuario "<usuario>" y la contraseña "<contraseña>"
   Then debería ver un mensaje de error
+
+  Examples:
+    | usuario     | contraseña |
+    | incorrecto  | incorrecta |
+    | incorrecto2 | innnn2     |
+    | incorrecto3 | innnn3     |

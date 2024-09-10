@@ -31,8 +31,7 @@ class LoginPage {
 
   // Método que verifica que el usuario se haya logueado correctamente
   verifyCorrectLogin() {
-    cy.url().should('include', 'inventory.html');
-    cy.url().should('contain', paths.inventory);
+    cy.url().should('include', paths.inventory);
   }
 
   // Método que verifica que el usuario se haya logueado correctamente

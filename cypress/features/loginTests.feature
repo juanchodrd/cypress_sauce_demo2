@@ -12,6 +12,6 @@ Scenario Outline: Error de inicio de sesión con credenciales incorrectas
 
   Examples:
     | usuario     | contraseña |
-    | incorrecto  | incorrecta |
+    | standard_user  | incorrecta |
     | incorrecto2 | innnn2     |
     | incorrecto3 | innnn3     |
